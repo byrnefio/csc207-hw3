@@ -7,7 +7,7 @@ import org.junit.Test;
 public class StringUtilsTest {
 
     @Test //splitat
-    public void test() {
+    public void testSplitAt() {
 	
 	assertArrayEquals(new String[] { "a", "b", "c" },
 		StringUtils.splitAt("a:b:c", ':'));
@@ -23,7 +23,7 @@ public class StringUtilsTest {
 		StringUtils.splitAt(":a", ':'));
 	assertArrayEquals("trailing empty field", new String[] { "a", "" },
 		StringUtils.splitAt("a:", ':'));
-    } //splitat
+    } //testSplitAt
 } //StringUtilsTest
 
 
