@@ -1,4 +1,4 @@
-package edu.grinnell.csc207.byrnefio.utils;
+package edu.grinnell.csc207.byrnefio.hw3;
 
 public class StringUtils {
 
@@ -7,20 +7,21 @@ public class StringUtils {
 	 * separated by a particular character
 	 */
     public static String[] splitAt(String splitText, char splitChar) {
-	int[] separator;
+	int[] separator = new int[splitText.length()];
 	int j = -1;
+	String split = "" + splitChar;  // from http://stackoverflow.com/questions/8172420/how-to-convert-a-char-to-a-string-in-java
 	for (int i=0;i<splitText.length();i++) {
 	    String var = splitText.substring(i, i+1);
-	    if (var.equals(splitChar)) {
+	    if (var.equals(split)) {
 		j++;
-		separator[j] = i;
+		separator[j] = i; //contains the indices of every separator character
 	    } //if
 	} //for
 	
-	String[] result = new String[j+1];
-	for (int k = 0; k < j; k++) {
+	String[] result = new String[j+2];
+	for (int k = 0; k < 3; k++) {
 	    if (k == 0) //is the first segment
-		result[k] = splitText.substring(0, separator[k]);
+		result[k] = splitText.substring(0, separator[k+1]);
 	    else if (k == (j - 1)) //is the last segment
 		result[k] = splitText.substring(separator[k]+1, splitText.length() - 1);
 	    else
