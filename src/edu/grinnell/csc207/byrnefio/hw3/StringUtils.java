@@ -6,7 +6,7 @@ public class StringUtils {
 	 * Splits a string into an array of substrings
 	 * separated by a particular character
 	 */
-	public String splitAt(String splitText, char splitChar) {
+	public static String[] splitAt(String splitText, char splitChar) {
 		return null;
 	} //splitAt
 	
@@ -14,7 +14,7 @@ public class StringUtils {
 	 * Splits a string into an array of substrings
 	 * using a comma as the separator and 
 	 */
-	public String splitCSV(String splitText) {
+	public static String splitCSV(String splitText) {
 		return null;
 	} //splitCSV
 	
@@ -25,7 +25,7 @@ public class StringUtils {
 		return null;
 	} //deLeet
 	
-	public String nameGame (String name)  {
+	public static String nameGame (String name)  {
 		return null;
 	} //nameGame
 
