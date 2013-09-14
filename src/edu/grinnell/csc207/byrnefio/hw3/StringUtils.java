@@ -82,20 +82,37 @@ public class StringUtils {
 	
 	public static void nameGame (String name)  {
 	    PrintWriter pen = new PrintWriter(System.out, true);
-	    String sh = "sh";
-	    String ch = "ch";
-	    String th = "th";
-	    String ph = "ph";
+	    String sh = "Sh";
+	    String ch = "Ch";
+	    String th = "Th";
+	    String ph = "Ph";
 	    String end;
 	    String test = name.substring(0, 2);
+	    String test2 = name.substring(0,1);
+	    String a = "A";
+	    String e = "E";
+	    String i = "I";
+	    String o = "O";
+	    String u = "U";
 	    if (test.equals(sh) || test.equals(ch) || test.equals(th) || test.equals(ph)) {
 		end = name.substring(2);
 	    }
+	    else if (test2.equals(a) || test2.equals(e) || test2.equals(i) || test2.equals(o) || test2.equals(u))
+		end = name.toLowerCase();
 	    else 
 		end = name.substring(1);
 	    pen.println(name + "!");
-pen.println(name + ", " + name + " bo " + minusBegin);
-	    
+	    pen.println(name + ", " + name + " bo B" + end + " Boanna fanna fo F" + end);
+	    pen.println("Fee fy mo M" + end + ", " + name + "!");
+
 	} //nameGame
+	
+	public static void main(String [] args)
+	{ nameGame("Shirley");
+	nameGame("Lincoln");
+	nameGame("Olivia");
+	}
+
 
 } //StringUtils
+
