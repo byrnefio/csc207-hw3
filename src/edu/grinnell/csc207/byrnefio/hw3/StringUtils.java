@@ -1,5 +1,5 @@
 package edu.grinnell.csc207.byrnefio.hw3;
-
+import java.io.PrintWriter;
 public class StringUtils {
 
 	/*
@@ -40,11 +40,12 @@ public class StringUtils {
 	 * Splits a string into an array of substrings
 	 * using a comma as the separator and 
 	 */
-	public static String splitCSV(String splitText) {
+	public static String[] splitCSV(String splitText) {
 	    int[] separator = new int[splitText.length()];
 	    int j = -1;
 	    String split = ",";  
 	    for (int i=0;i<splitText.length();i++) {
+		boolean inside = false;
 		String var = splitText.substring(i, i+1);
 		if (var.equals(split)) {
 		    j++;
@@ -77,8 +78,24 @@ public class StringUtils {
 		return null;
 	} //deLeet
 	
-	public static String nameGame (String name)  {
-		return null;
+	
+	
+	public static void nameGame (String name)  {
+	    PrintWriter pen = new PrintWriter(System.out, true);
+	    String sh = "sh";
+	    String ch = "ch";
+	    String th = "th";
+	    String ph = "ph";
+	    String end;
+	    String test = name.substring(0, 2);
+	    if (test.equals(sh) || test.equals(ch) || test.equals(th) || test.equals(ph)) {
+		end = name.substring(2);
+	    }
+	    else 
+		end = name.substring(1);
+	    pen.println(name + "!");
+pen.println(name + ", " + name + " bo " + minusBegin);
+	    
 	} //nameGame
 
 } //StringUtils
