@@ -18,7 +18,13 @@ public class StringUtils {
 	    } //if
 	} //for
 	
+	
 	String[] result = new String[j+2];
+	if (separator[0]==0 && !split.equals(splitText.substring(0,1))) {
+	    result[0]=splitText;
+		    return result;
+	}
+	
 	for (int k = 0; k < (j+2); k++) {
 	    if (k == 0) //is the first segment
 		result[k] = splitText.substring(0, separator[k]);
