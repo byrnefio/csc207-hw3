@@ -10,6 +10,7 @@ public class StringUtils {
 	int[] separator = new int[splitText.length()];
 	int j = -1;
 	String split = "" + splitChar;  // [1] 
+	for (int i = 0; i <splitText.length(); i++) {
 	    String var = splitText.substring(i, i+1);
 	    if (var.equals(split)) {
 		j++;
@@ -76,9 +77,11 @@ public class StringUtils {
 	 *  Converts a string from leet to plaintext
 	 */
 	public static String deLeet (String leet) {
-		return null;
+	    
+	    String deleeted = "nothing yet";
+	    return deleeted;	
 	} //deLeet
-	
+
 	
 	/*
 	 * Takes any English name beginning with a capital letter and
@@ -129,7 +132,8 @@ public class StringUtils {
 	    nameGame("Shirley");
 	    nameGame("Lincoln");
 	    nameGame("Olivia");
-	}
+	} // main
+	
 
 
 } //StringUtils
