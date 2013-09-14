@@ -23,6 +23,7 @@ public class StringUtilsTest {
 		StringUtils.splitAt(":a", ':'));
 	assertArrayEquals("trailing empty field", new String[] { "a", "" },
 		StringUtils.splitAt("a:", ':'));
+		
     } //testSplitAt
 } //StringUtilsTest
 

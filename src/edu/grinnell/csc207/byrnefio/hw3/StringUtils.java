@@ -19,11 +19,11 @@ public class StringUtils {
 	} //for
 	
 	String[] result = new String[j+2];
-	for (int k = 0; k < 3; k++) {
+	for (int k = 0; k < (j+2); k++) {
 	    if (k == 0) //is the first segment
-		result[k] = splitText.substring(0, separator[k+1]);
-	    else if (k == (j - 1)) //is the last segment
-		result[k] = splitText.substring(separator[k]+1, splitText.length() - 1);
+		result[k] = splitText.substring(0, separator[k]);
+	    else if (k == (j + 1)) //is the last segment
+		result[k] = splitText.substring(separator[k-1]+1);
 	    else
 		result[k] = splitText.substring(separator[k-1]+1, separator[k]);
 	}

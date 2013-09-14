@@ -1,4 +1,4 @@
-package edu.grinnell.csc207.byrnefio.utils;
+package edu.grinnell.csc207.byrnefio.hw3;
 
 import java.math.BigInteger;
 
