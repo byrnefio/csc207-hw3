@@ -107,10 +107,11 @@ public class StringUtils {
 
 	} //nameGame
 	
-	public static void main(String [] args)
-	{ nameGame("Shirley");
-	nameGame("Lincoln");
-	nameGame("Olivia");
+	public static void main(String [] args) {
+	    //testing nameGame
+	    nameGame("Shirley");
+	    nameGame("Lincoln");
+	    nameGame("Olivia");
 	}
 
 
