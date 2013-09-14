@@ -41,7 +41,33 @@ public class StringUtils {
 	 * using a comma as the separator and 
 	 */
 	public static String splitCSV(String splitText) {
-		return null;
+	    int[] separator = new int[splitText.length()];
+	    int j = -1;
+	    String split = ",";  
+	    for (int i=0;i<splitText.length();i++) {
+		String var = splitText.substring(i, i+1);
+		if (var.equals(split)) {
+		    j++;
+		    separator[j] = i; //contains the indices of every separator character
+		} //if
+	    } //for
+
+
+	    String[] result = new String[j+2];
+	    if (separator[0]==0 && !split.equals(splitText.substring(0,1))) {
+		result[0]=splitText;
+		return result;
+	    }
+
+	    for (int k = 0; k < (j+2); k++) {
+		if (k == 0) //is the first segment
+		    result[k] = splitText.substring(0, separator[k]);
+		else if (k == (j + 1)) //is the last segment
+		    result[k] = splitText.substring(separator[k-1]+1);
+		else
+		    result[k] = splitText.substring(separator[k-1]+1, separator[k]);
+	    }
+	    return result;
 	} //splitCSV
 	
 	/*
