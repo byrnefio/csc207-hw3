@@ -77,7 +77,21 @@ public class StringUtils {
 	 *  Converts a string from leet to plaintext
 	 */
 	public static String deLeet (String leet) {
+	    String a = "@";
+	    String b = "|3";
+	    String e = "3";
+	    String l = "1";
+	    String n = "|\\|";
+	    String o = "0";
+	    String t = "+";
 	    
+	    String[][] leetDict= [2][2];
+	    leetDict [0][0] = {"a", "@"}; //how do you do 2d arrays I will figure this out later because I need to go 
+	    
+	    for (i = 0, i < leet.length(); i++) {
+		String ch = leet.substring(i, i+1);
+		
+	    }
 	    String deleeted = "nothing yet";
 	    return deleeted;	
 	} //deLeet
