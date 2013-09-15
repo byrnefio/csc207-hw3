@@ -77,23 +77,70 @@ public class StringUtils {
 	 *  Converts a string from leet to plaintext
 	 */
 	public static String deLeet (String leet) {
+	    // l33t alphabet
 	    String a = "@";
 	    String b = "|3";
+	    String c = "(";
+	    String d = "|)";
 	    String e = "3";
+	    String f = "|=";
+	    String g = "9";
+	    String h = "#";
+	    String i = "|";
+	    String k = "\\<";
 	    String l = "1";
+	    String m = "/v\\";
 	    String n = "|\\|";
 	    String o = "0";
+	    String s = "5";
 	    String t = "+";
 	    
-	    String[][] leetDict= [2][2];
-	    leetDict [0][0] = {"a", "@"}; //how do you do 2d arrays I will figure this out later because I need to go 
-	    
-	    for (i = 0, i < leet.length(); i++) {
-		String ch = leet.substring(i, i+1);
+	    //String[][] leetDict= [2][2];
+	   // leetDict [0][0] = {"a", "@"}; //how do you do 2d arrays I will figure this out later because I need to go 
+	    String temp = leet.toLowerCase();
+	    String output="";
+	    for (int j = 1; j <= leet.length(); j++) {
+		String interpret=temp.substring(j-1,j);
+		switch (interpret) {
+		case "a": output.concat("@");
+		break;
+		case "b": output.concat("|3");
+		break;
+		case "c": output.concat("(");
+		break;
+		case "d": output.concat("|)");
+		break;
+		case "e": output.concat("3");
+		break;
+		case "f": output.concat("|=");
+		break;
+		case "g": output.concat("9");
+		break;
+		case "h": output.concat("#");
+		break;
+		case "i": output.concat("|");
+		break;
+		case "k": output.concat("\\<");
+		break;
+		case "l": output.concat("1");
+		break;
+		case "m": output.concat("/v\\");
+		break;
+		case "n": output.concat("|\\|");
+		break;
+		case "o": output.concat("0");
+		break;
+		case "s": output.concat("5");
+		break;
+		case "t": output.concat("+");
+		break;
+		default: output.concat(interpret);
+		break;
+		}
+	
 		
 	    }
-	    String deleeted = "nothing yet";
-	    return deleeted;	
+	    return output;	
 	} //deLeet
 
 	
