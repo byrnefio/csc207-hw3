@@ -26,7 +26,7 @@ public class StringUtilsTest {
 		
     } //testSplitAt
     
-    @Test //splitCSV
+    //@Test //splitCSV
     public void testSplitCSV(){
 	assertArrayEquals(new String[] { "a", "b", "c" },
 		StringUtils.splitCSV("a,b,c"));
@@ -34,7 +34,16 @@ public class StringUtilsTest {
 		StringUtils.splitCSV("\"a,b\",c"));
 	assertArrayEquals(new String[] { "a", "b,b\"", "c" },
 		StringUtils.splitCSV("a,\"b,b\"\"\",c"));
+    } //tesetSplitCSV
+    
+    @Test //deLeet
+    public void testdeLeet(){
+	assertEquals("e", StringUtils.deLeet("3"));
+	assertEquals("leet", StringUtils.deLeet("133+"));
+	assertEquals("eat banana", StringUtils.deLeet("3@+ |3@|\\|@|\\|@"));
+	assertEquals("",StringUtils.deLeet(""));
     }
+    
 } //StringUtilsTest
 
 

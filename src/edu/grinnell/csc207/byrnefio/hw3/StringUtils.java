@@ -86,10 +86,10 @@ public class StringUtils {
 	    output = output.replace("|=", "f");
 	    output = output.replace("+", "t");
 	    output = output.replace("@", "a");
-	    output = output.replace("e", "3");
-	    output = output.replace("|", "l");
+	    output = output.replace("3", "e");
+	    output = output.replace("1", "l");
 	    output = output.replace("0", "o");
-	    output = output.replace("1", "i");
+	    output = output.replace("|", "i");
 	    output = output.replace("#", "h");
 	    output = output.replace("9", "g");
 	    output = output.replace("(", "c");   
