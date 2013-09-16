@@ -74,11 +74,13 @@ public class StringUtils {
 		i++;
 		if(ignore.equals(splitText.substring(i,i+1)))
 		    buff.append(splitText.substring(i,i+1));
-		while(!(ignore.equals(splitText.substring(i,i+1)))){
-		    buff.append(splitText.substring(i,i+1));
-		    i++;
-		}
+		else{
+		    while(!(ignore.equals(splitText.substring(i,i+1)))){
+			buff.append(splitText.substring(i,i+1));
+			i++;
+		    }//while
 		i++;
+		}//else
 	    }//if
 	    if(split.equals(splitText.substring(i,i+1))){
 		result[count]=buff.toString();
