@@ -64,21 +64,28 @@ public class StringUtils {
 	    } //if
 	} //for
 	
-	String[] result = new String[separator]; //our output string array, of proper length
-	boolean inQuotes = false; //state of the separator search
+	int count = 0;
+	String[] result = new String[separator+1]; //our output string array, of proper length
 	StringBuffer buff = new StringBuffer(); //this is where we'll make strings before
 						   //we push it to the result array 
 
 	for (int i = 0;i<splitText.length();i++){
-	    if(ignore.equals(splitText.substring(i,i+1))){
-		//check and see if second char follows, and add a single quote to buff
-		//use while to iterate through string until a second quote is reached
-	    }
-	    //once we reach a separator, flush buff to result
-	    //add current char to buff
-		
-	    }
-	}
+	    String current = splitText.substring(i,i+1);
+	    if(ignore.equals(current)){
+		current = splitText.substring(i+1,i+2); //looks one ahead
+		if(ignore.equals(current))
+		    buff.append(current);
+		while(!(ignore.equals(current)))
+		    i++;
+	    }//if
+	    if(split.equals(current)){
+		result[count]=buff.toString();
+		count++;
+		buff.delete(0, buff.length());
+	    }else
+		buff.append(current);
+	    }//for
+	result[count]=buff.toString(); //adds final buffer to array
 	return result;
 	} //splitCSV
 	
