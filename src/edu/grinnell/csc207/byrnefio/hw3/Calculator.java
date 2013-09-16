@@ -23,13 +23,13 @@ public class Calculator {
 			 switch(operand) {
 			 case "+": soFar = soFar.add(new BigInteger(input[i+1]));
 			 break;
-			 case "-": soFar = soFar.add(new BigInteger(input[i+1]));
+			 case "-": soFar = soFar.subtract(new BigInteger(input[i+1]));
 			 break;
-			 case "*": soFar = soFar.add(new BigInteger(input[i+1]));
+			 case "*": soFar = soFar.multiply(new BigInteger(input[i+1]));
 			 break;
-			 case "/": soFar = soFar.add(new BigInteger(input[i+1]));
+			 case "/": soFar = soFar.divide(new BigInteger(input[i+1]));
 			 break;
-			 case "^": soFar = soFar.add(new BigInteger(input[i+1]));
+			 case "^": soFar = soFar.pow(Integer.valueOf(input[i+1])); //from http://stackoverflow.com/a/5585876
 			 break;	
 			 }
 	       } //for
@@ -45,10 +45,4 @@ public class Calculator {
 	public static int[] fewestCoins (int payment) {
 		return null;
 	} //fewestCoins
-
-	
-	public static void main(String [] args) {
-	    System.out.println(eval0("1 + 2 + 3 + 50"));
-	    System.out.println(eval0("156"));
-	}
 } //Calculator
