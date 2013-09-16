@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class CalculatorTest {
 
-    @Test
+    @Test //Calculator
     public void test() {
 	assertEquals(new BigInteger("0"), Calculator.eval0("0"));
 	assertEquals(new BigInteger("2"), Calculator.eval0("1 + 1"));
@@ -16,6 +16,6 @@ public class CalculatorTest {
 	assertEquals(new BigInteger("9"), Calculator.eval0("1 + 2 * 3"));
 	assertEquals(new BigInteger("8192"), Calculator.eval0("1 + 2 / 3 + 1 ^ 13"));
 	assertEquals(new BigInteger("18446744073709551616"), Calculator.eval0("2 ^ 64"));
-    }
+    } //Calculator
 
 }
