@@ -72,7 +72,8 @@ public class StringUtils {
 	for (int i = 0;i<splitText.length();i++){
 	    String current = splitText.substring(i,i+1);
 	    if(ignore.equals(current)){
-		current = splitText.substring(i+1,i+2); //looks one ahead
+		i++;
+		current = splitText.substring(i,i+1); //looks one ahead
 		if(ignore.equals(current))
 		    buff.append(current);
 		while(!(ignore.equals(current)))
