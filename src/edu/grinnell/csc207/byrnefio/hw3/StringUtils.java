@@ -66,11 +66,16 @@ public class StringUtils {
 	
 	String[] result = new String[separator]; //our output string array, of proper length
 	boolean inQuotes = false; //state of the separator search
-	StringBuffer working = new StringBuffer(); //this is where we'll make strings before
+	StringBuffer buff = new StringBuffer(); //this is where we'll make strings before
 						   //we push it to the result array 
 
 	for (int i = 0;i<splitText.length();i++){
 	    if(ignore.equals(splitText.substring(i,i+1))){
+		//check and see if second char follows, and add a single quote to buff
+		//use while to iterate through string until a second quote is reached
+	    }
+	    //once we reach a separator, flush buff to result
+	    //add current char to buff
 		
 	    }
 	}
