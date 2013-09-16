@@ -66,27 +66,46 @@ public class StringUtils {
 	
 	int count = 0;
 	String[] result = new String[separator+1]; //our output string array, of proper length
+
 	StringBuffer buff = new StringBuffer(); //this is where we'll make strings before
 						   //we push it to the result array 
 
+	
+	//traverse the string, adding to output array as we go
 	for (int i = 0;i<splitText.length();i++){
+	    //checks for the inQuote
 	    if(ignore.equals(splitText.substring(i,i+1))){
-		i++;
-		if(ignore.equals(splitText.substring(i,i+1)))
+		//checks if inQuote is actually a double, meaning read/append as a single
+		if(ignore.equals(splitText.substring(i+1,i+2))){
+		    i++;
 		    buff.append(splitText.substring(i,i+1));
-		else{
-		    while(!(ignore.equals(splitText.substring(i,i+1)))){
-			buff.append(splitText.substring(i,i+1));
-			i++;
-		    }//while
-		i++;
-		}//else
+		}//if
+		i++; //gets past the inQuote
+		
+		//moves through the inQuote area until outQuote
+		while(!(ignore.equals(splitText.substring(i,i+1)))){
+		    //checks for two subsequent quotes in the inQuote, appends char before double quote
+		    //and then moves to last double quote
+		    if(ignore.equals(splitText.substring(i+1,i+2))){
+			if(ignore.equals(splitText.substring(i+2,i+3))){
+			    buff.append(splitText.substring(i,i+1));
+			    i+=2;
+			} //if inner
+		    } //if outer
+		    //append a normal char/last double quote 
+		    buff.append(splitText.substring(i,i+1));
+		    i++;
+		}//while
+		i++; //gets past the outQuote
 	    }//if
+	    
+	    //if separator, write buffer to array element, increment array, and clear buffer
 	    if(split.equals(splitText.substring(i,i+1))){
 		result[count]=buff.toString();
 		count++;
 		buff.delete(0, buff.length());
 	    }else
+		//appends next char
 		buff.append(splitText.substring(i,i+1));
 	    }//for
 	result[count]=buff.toString(); //adds final buffer to array
