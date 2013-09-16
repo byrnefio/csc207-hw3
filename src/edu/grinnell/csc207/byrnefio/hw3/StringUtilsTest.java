@@ -26,7 +26,7 @@ public class StringUtilsTest {
 		
     } //testSplitAt
     
-    //@Test //splitCSV
+    @Test //splitCSV
     public void testSplitCSV(){
 	assertArrayEquals(new String[] { "a", "b", "c" },
 		StringUtils.splitCSV("a,b,c"));

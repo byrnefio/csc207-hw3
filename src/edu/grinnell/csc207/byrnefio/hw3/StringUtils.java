@@ -46,9 +46,20 @@ public class StringUtils {
 	public static String[] splitCSV(String splitText) {
 	    int[] separator = new int[splitText.length()];
 	    int j = -1;
-	    String split = ",";  
+	    String split = ",";
+	    String ignore = "\"";
+	    String single = "\"\"";
 	    for (int i=0;i<splitText.length();i++) {
-		boolean inside = false;
+		if(i<splitText.length()-2)
+		    if (single.equals(splitText.substring(i,i+2)))
+			i += 2;
+		if(i<splitText.length()-1)
+		    if (ignore.equals(splitText.substring(i,i+1))) {
+			i++;
+			while(!(ignore.equals(splitText.substring(i,i+1)))){
+			    i++;
+			} //while
+		    } //if
 		String var = splitText.substring(i, i+1);
 		if (var.equals(split)) {
 		    j++;
