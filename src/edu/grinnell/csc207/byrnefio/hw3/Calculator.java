@@ -8,6 +8,7 @@ public class Calculator {
 	/* 
 	 * Reads a string containing a mathematical 
 	 * expression and evaluates it from left to right
+	 * considering only +, -, *, /, and ^ operands
 	 */
 	public static BigInteger eval0 (String expression) {
 	   BigInteger soFar;
