@@ -70,21 +70,22 @@ public class StringUtils {
 						   //we push it to the result array 
 
 	for (int i = 0;i<splitText.length();i++){
-	    String current = splitText.substring(i,i+1);
-	    if(ignore.equals(current)){
+	    if(ignore.equals(splitText.substring(i,i+1))){
 		i++;
-		current = splitText.substring(i,i+1); //looks one ahead
-		if(ignore.equals(current))
-		    buff.append(current);
-		while(!(ignore.equals(current)))
+		if(ignore.equals(splitText.substring(i,i+1)))
+		    buff.append(splitText.substring(i,i+1));
+		while(!(ignore.equals(splitText.substring(i,i+1)))){
+		    buff.append(splitText.substring(i,i+1));
 		    i++;
+		}
+		i++;
 	    }//if
-	    if(split.equals(current)){
+	    if(split.equals(splitText.substring(i,i+1))){
 		result[count]=buff.toString();
 		count++;
 		buff.delete(0, buff.length());
 	    }else
-		buff.append(current);
+		buff.append(splitText.substring(i,i+1));
 	    }//for
 	result[count]=buff.toString(); //adds final buffer to array
 	return result;
