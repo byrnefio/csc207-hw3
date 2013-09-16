@@ -41,48 +41,40 @@ public class StringUtils {
 	
 	/*
 	 * Splits a string into an array of substrings
-	 * using a comma as the separator and 
+	 * using a comma as the separator and ignoring any
+	 * commas between two quotation marks. Two quotation
+	 * marks in a row are read as one.  
 	 */
-	public static String[] splitCSV(String splitText) {
-	    int[] separator = new int[splitText.length()];
-	    int j = -1;
-	    String split = ",";
-	    String ignore = "\"";
-	    String single = "\"\"";
-	    for (int i=0;i<splitText.length();i++) {
-		if(i<splitText.length()-2)
-		    if (single.equals(splitText.substring(i,i+2)))
-			i += 2;
-		if(i<splitText.length()-1)
-		    if (ignore.equals(splitText.substring(i,i+1))) {
+    public static String[] splitCSV(String splitText) {
+	int separator = 0;
+	
+	String split = ",";
+	String ignore = "\"";
+	for (int i=0;i<splitText.length();i++) {
+	    if(i<splitText.length()-1)
+		if (ignore.equals(splitText.substring(i,i+1))) {
+		    i++;
+		    while(!(ignore.equals(splitText.substring(i,i+1)))){
 			i++;
-			while(!(ignore.equals(splitText.substring(i,i+1)))){
-			    i++;
-			} //while
-		    } //if
-		String var = splitText.substring(i, i+1);
-		if (var.equals(split)) {
-		    j++;
-		    separator[j] = i; //contains the indices of every separator character
+		    } //while
 		} //if
-	    } //for
+	    String var = splitText.substring(i, i+1);
+	    if (var.equals(split)) {
+		separator++; //increment number of separating chars
+	    } //if
+	} //for
+	
+	String[] result = new String[separator]; //our output string array, of proper length
+	boolean inQuotes = false; //state of the separator search
+	StringBuffer working = new StringBuffer(); //this is where we'll make strings before
+						   //we push it to the result array 
 
-
-	    String[] result = new String[j+2];
-	    if (separator[0]==0 && !split.equals(splitText.substring(0,1))) {
-		result[0]=splitText;
-		return result;
+	for (int i = 0;i<splitText.length();i++){
+	    if(ignore.equals(splitText.substring(i,i+1))){
+		
 	    }
-
-	    for (int k = 0; k < (j+2); k++) {
-		if (k == 0) //is the first segment
-		    result[k] = splitText.substring(0, separator[k]);
-		else if (k == (j + 1)) //is the last segment
-		    result[k] = splitText.substring(separator[k-1]+1);
-		else
-		    result[k] = splitText.substring(separator[k-1]+1, separator[k]);
-	    }
-	    return result;
+	}
+	return result;
 	} //splitCSV
 	
 	/*
