@@ -106,6 +106,6 @@ public class Calculator {
 	    System.out.println(Arrays.toString(fewestCoins(44)));
 	    System.out.println(Arrays.toString(fewestCoins(16)));
 	    System.out.println(Arrays.toString(fewestCoins(65)));
-	    System.out.println(Arrays.toString(fewestCoins(200)));
+	    System.out.println(Arrays.toString(fewestCoins(1800)));
 	}
 } //Calculator
