@@ -80,10 +80,10 @@ public class Calculator {
 		     * combination of coins that would generate the correct answer.
 		     * NOTE: This becomes unusably slow very quickly, so be careful. (Up to XXX tested to be safe)
 		     */
-		    for( int deck = 0;deck<payment;deck++)
-			for(int stickpair = 0;stickpair<payment;stickpair++)
-			    for(int eater = 0;eater<payment;eater++)
-				for(int wot = 0;wot<payment;wot++)
+		    for( int deck = 0;deck<=(payment/54);deck++)
+			for(int stickpair = 0;stickpair<=(payment/11);stickpair++)
+			    for(int eater = 0;eater<=(payment/7);eater++)
+				for(int wot = 0;wot<=(payment/2);wot++)
 				    if(payment == (2*wot + 7*eater + 11*stickpair + 54*deck) &&
 				    (wot+eater+stickpair+deck<=elements)){
 					change[0]=wot;
@@ -106,6 +106,6 @@ public class Calculator {
 	    System.out.println(Arrays.toString(fewestCoins(44)));
 	    System.out.println(Arrays.toString(fewestCoins(16)));
 	    System.out.println(Arrays.toString(fewestCoins(65)));
-	    System.out.println(Arrays.toString(fewestCoins(65)));
+	    System.out.println(Arrays.toString(fewestCoins(200)));
 	}
 } //Calculator
