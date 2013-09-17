@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class StringUtilsTest {
 
-    @Test //splitat
+    @Test //splitAt
     public void testSplitAt() {
 	
 	assertArrayEquals(new String[] { "a", "b", "c" },

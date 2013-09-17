@@ -1,3 +1,11 @@
+/**
+ * @author - Fiona Byrne
+ * @author - John Brady
+ * Homework #3
+ * 2013-09-16
+ * CSC207, Rebelsky
+ */
+
 package edu.grinnell.csc207.byrnefio.hw3;
 import java.io.PrintWriter;
 
@@ -70,7 +78,6 @@ public class StringUtils {
 	StringBuffer buff = new StringBuffer(); //this is where we'll make strings before
 						   //we push it to the result array 
 
-	
 	//traverse the string, adding to output array as we go
 	for (int i = 0;i<splitText.length();i++){
 	    //checks for the inQuote
@@ -113,7 +120,7 @@ public class StringUtils {
 	} //splitCSV
 	
 	/*
-	 *  Converts a string from leet to plaintext
+	 *  Converts a string from l33t to pl@1n+3}{+
 	 */
 	public static String deLeet (String leet){ //replaceAll didn't work, found solution here: http://stackoverflow.com/a/4105860
 	    String output = leet.replace("|\\|","n");
@@ -185,8 +192,6 @@ public class StringUtils {
 	    nameGame("Lincoln");
 	    nameGame("Olivia");
 	    
-	    //testing deLeet
-	    System.out.println(deLeet("3@+ |3@|\\|@|\\|@"));
 	    
 	} // main
 	
