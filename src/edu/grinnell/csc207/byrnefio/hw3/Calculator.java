@@ -56,7 +56,8 @@ public class Calculator {
 	/* 
 	 * Calculates the fewest number of coins of specific 
 	 * denominations needed to make change for the value
-	 * given
+	 * given. Results are given as an array of the numbers
+	 * of each type {wots,eaters,stickpairs,decks}
 	 */
 	public static int[] fewestCoins (int payment) {
 		int[] change = {0,0,0,0}; //starting values of change
