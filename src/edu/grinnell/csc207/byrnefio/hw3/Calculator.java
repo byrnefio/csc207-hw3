@@ -36,7 +36,7 @@ public class Calculator {
 	       //cycles through operators (by starting at input[1] and applying each operator
 	       for (int i = 1; i<input.length - 1; i+=2) {
 		   String operator = input[i];
-			 switch(operator) {
+			 switch(operator) {  //didn't work on my mac(JDK1.6) but worked on my Windows PC(JDK1.7)
 			 case "+": soFar = soFar.add(new BigInteger(input[i+1]));
 			 break;
 			 case "-": soFar = soFar.subtract(new BigInteger(input[i+1]));
@@ -78,7 +78,8 @@ public class Calculator {
 		     * combination will have to use fewer coins in order to update the output array.
 		     * We will end having tested every possible combination, and we only output the shortest
 		     * combination of coins that would generate the correct answer.
-		     * NOTE: This becomes unusably slow very quickly, so be careful. (Up to XXX tested to be safe)
+		     * NOTE: This becomes unusably slow at large numbers, so be careful. 
+		     * (Up to 1800 tested to be safe)
 		     */
 		    for( int deck = 0;deck<=(payment/54);deck++)
 			for(int stickpair = 0;stickpair<=(payment/11);stickpair++)
